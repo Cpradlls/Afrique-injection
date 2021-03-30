@@ -26,6 +26,18 @@
     echo "<pre>✖️ Erreur liée à la requête SQL :\n" . $e->getMessage() . "</pre>";
 
   }
+  
+  // Extraits les noms des pays dans un nouveau tableau
+  foreach ($tableau as $pays) {
+    $nomsDesPays[] = $pays["country_name"];
+  }
+  
+  // Modifie les informations de localisation
+  setlocale(LC_ALL, "fr_FR.UTF-8");
+
+  // Trie les tableaux multidimensionnels
+  // SORT_LOCALE_STRING - compare les éléments sous forme de chaînes de caractères, en se basant sur la locale courante. La fonction utilise les locales, et elles peuvent être modifiées en utilisant la fonction setlocale()
+  array_multisort($nomsDesPays, SORT_LOCALE_STRING, $tableau);
 
   foreach ($tableau as $pays) {
     echo "<section>";
