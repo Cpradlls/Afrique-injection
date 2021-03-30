@@ -1,0 +1,237 @@
+/*
+
+base
+
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  line-height: 1.3125;
+}
+
+/*
+
+style
+
+*/
+
+body {
+  margin: 0;
+  background-color: #1c1c1c;
+  color: #eeeeee;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 2rem;
+  }
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+
+header
+
+*/
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #161616;
+  min-height: 10vh;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-bottom: .1rem solid #282828;
+}
+
+header > h1 {
+  margin: 0;
+}
+
+/*
+
+main
+
+*/
+
+main {
+  min-height: 80vh;
+}
+
+/*
+
+main.accueil
+
+*/
+
+@media (max-width: 767px) {
+  main.accueil {
+    display: grid;
+    grid-gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  main.accueil {
+    display: grid;
+    grid-gap: 2rem;
+    padding: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+main.accueil > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 2rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 767px) {
+  main.accueil > a:nth-of-type(1) {
+    background-color: #8bc34a;
+    color: #33691e;
+  }
+
+  main.accueil > a:nth-of-type(2) {
+    background-color: #FFC107;
+    color: #bd5200;
+  }
+}
+
+@media (min-width: 768px) {
+  main.accueil > a {
+    transition: background-color 100ms,
+                color 100ms;
+    border: .2rem solid #282828;
+  }
+
+  main.accueil > a:hover {
+    border-color: transparent;
+  }
+
+  main.accueil > a:nth-of-type(1):hover {
+    border-color: #8bc34a;
+    background-color: #8bc34a;
+    color: #33691e;
+  }
+
+  main.accueil > a:nth-of-type(2):hover {
+    border-color: #FFC107;
+    background-color: #FFC107;
+    color: #bd5200;
+  }
+}
+
+/*
+
+main.pays-liste
+
+*/
+
+main.pays-liste {
+  display: grid;
+  grid-gap: 2rem;
+  padding: 2rem;
+}
+
+@media (max-width: 767px) {
+  /* nada */
+}
+@media (min-width: 768px) {
+  main.pays-liste {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+main.pays-liste > section {
+  position: relative;
+  border: .2rem solid #282828;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+main.pays-liste > section:hover {
+  background-color: #282828;
+}
+
+main.pays-liste > section > h1,
+main.pays-liste > section > div {
+  position: relative;
+  text-shadow: 0 0 1rem #161616;
+  margin-top: 0;
+  z-index: 2;
+}
+
+main.pays-liste > section > h2 {
+  position: absolute;
+  margin: 0;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 10vh;
+  z-index: 1;
+}
+
+/*
+
+main.pays-creer
+
+*/
+
+main.pays-creer {
+  padding: 2rem;
+}
+
+/*
+
+footer
+
+*/
+
+footer {
+  border-top: .1rem solid #282828;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 10vh;
+  background-color: #161616;
+  color: #666;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
